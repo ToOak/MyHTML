@@ -1,0 +1,8 @@
+body{
+    background-color: blanchedalmond;
+}
+a.right_link{
+    /*align-content: stretch;*/
+    text-decoration: none;
+    margin-left: 100px;
+}

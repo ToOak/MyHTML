@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My JavaScrip tApplication</title>
+</head>
+<body>
+<script type="text/javascript" >
+    document.write("Hi, JavaScript ! " + "<br/>");
+    document.write(new Date().toString() + "<br/>");
+    function moveon() {
+        var answer = confirm("准备好了么？");
+        if (answer){
+            window.location = "http://www.google.com.cn";
+        }
+    }
+//    setTimeout(moveon,6000);
+</script>
+
+<input id="myText" name="myText" size="50" onblur="edit_change()">
+<button id="myButton" onclick="popupMsg('click!')">run</button>
+<br />
+
+
+<script type="text/javascript" src="../js/myjs.js">
+
+</script>
+</body>
+</html>

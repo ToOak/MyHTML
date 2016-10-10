@@ -1,0 +1,251 @@
+<!--doctype 元素必须位于 html 元素之前-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+    <meta name="author" content="xsl.cc.com">
+    <meta name="revised" content="A Fei,8/8/16">
+    <meta name="generator" content="WS">
+    <meta name="description" content="HTML examples">
+    <meta name="keywords" content="HTML, DHTML, CSS, XML, XHTML, JavaScript, VBScript">
+    <!--<meta http-equiv="refresh" content="5;url=http://www.baidu.com">-->
+    <title>Hello Web</title>
+    <style type="text/css">
+        h1{
+            color: red;
+        }
+        p{
+            color: blue;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/csstest.css">
+    <base target="_blank">
+</head>
+<body bgcolor="#fafad2" text="#ff7f50">
+<p>
+    对不起。我们已经搬家了。您的 URL 是 <a href="http://www.baidu.com">http://www.baidu.com</a>
+</p>
+
+<p>您将在 5 秒内被重定向到新的地址。</p>
+
+<p>如果超过 5 秒后您仍然看到本消息，请点击上面的链接。</p>
+
+<!--默认情况下，HTML 会自动地在块级元素前后添加一个额外的空行，比如段落、标题元素前后。-->
+<h1 align="center" style="font-family: Verdana;font-size: 500%">My First Heading_1</h1>
+<a href="#picture">goto picture</a><br />
+<a class="right_link" href="second.html" target="_blank">goto second html</a>
+<hr/>
+
+
+<form>
+    账号：
+    <input type="text" name="account">
+    <br />
+    密码：
+    <input type="password" name="password">
+    <br />
+    性别：
+    <input type="radio" name="sex" value="male" checked="checked">男
+    <input type="radio" name="sex" value="female">女
+    <br />
+    爱好：
+    <input type="checkbox" name="book">书
+    <input type="checkbox" name="music">音乐
+    <input type="checkbox" name="movie">电影
+    <br />
+    学历：
+    <select name="education">
+        <option value="kindergarten">幼儿园</option>
+        <option value="primary">小学</option>
+        <option value="junior middle">初中</option>
+        <option value="high">高中</option>
+        <option value="junior college">大专</option>
+        <option value="undergraduate" selected="selected">本科</option>
+        <option value="master">硕士</option>
+        <option value="doctor">博士</option>
+    </select>
+    <br />
+    <fieldset>
+        <legend>健康信息</legend>
+        身高：<input type="text">
+        体重：<input type="text">
+    </fieldset>
+    擅长：
+    <br />
+    <textarea rows="5" cols="60">The cat was playing in the garden.
+    </textarea>
+    <input type="button" value="Click Me !" onclick="alert(this)">
+</form>
+
+
+<form action="MAILTO:someone@w3school.com.cn" method="post" enctype="text/plain">
+
+    <h3>这个表单会把电子邮件发送到 W3School。</h3>
+    姓名：<br />
+    <input type="text" name="name" value="yourname" size="20">
+    <br />
+    电邮：<br />
+    <input type="text" name="mail" value="yourmail" size="20">
+    <br />
+    内容：<br />
+    <input type="text" name="comment" value="yourcomment" size="40">
+    <br /><br />
+    <input type="submit" value="发送">
+    <input type="reset" value="重置">
+</form>
+<form name="input" action="asp/html_from_action.asp" method="get">
+    Username:
+    <input type="text" name="user" />
+    <input type="submit" value="Submit" />
+</form>
+<h6>This is a Heading_6</h6>
+<p>my first <br />paragraph.</p><br />
+<b>This text is bold</b><br />
+<strong>This text is strong</strong><br />
+<big>This text is big</big><br />
+<em>This text is emphasized</em><br />
+<i>This text is italic</i><br />
+<small>This text is small</small><br />
+This text contains<sub>subscript</sub><br />
+This text contains<sup>supscript</sup><br />
+<!--预格式文本。它保留了空格和换行。-->
+<pre>
+    public static void main(String[] args){
+        System.out.println();
+    }
+</pre>
+<code>Computer code</code><br />
+<kbd>Keyboard input</kbd><br />
+<tt>Teletype text</tt><br />
+<samp>Sample text</samp><br />
+<var>Computer variable</var><br />
+<hr />
+<address>
+    Written by <a href="mailto:webmaster@example.com">Donald Duck</a>.<br />
+    Visit us at:<br />
+    Example.com<br />
+    Box 564, Disneyland<br />
+    USA
+</address>
+<hr />
+这是邮件链接：
+    <!--注意：应该使用 %20 来替换单词之间的空格，这样浏览器就可以正确地显示文本了。-->
+<a href="mailto:someone@microsoft.com?subject=Hello%20again">发送邮件</a><br />
+这是另一个 mailto 链接：
+<a href="mailto:someone@microsoft.com
+?cc=someoneelse@microsoft.com
+&bcc=andsomeoneelse2@microsoft.com
+&subject=Summer%20Party
+&body=You%20are%20invited%20to%20a%20big%20summer%20party!">发送邮件！</a><br />
+<abbr title="etcetera">etc.</abbr><br />
+<acronym title="World Wide Web">WWW</acronym><br />
+<bdo dir="rtl">Here is some Hebrew text</bdo><br />
+<blockquote>这是长的引用，这是长的引用，这是长的引用，这是长的引用，这是长的引用，这是长的引用，这是长的引用。</blockquote>
+<q>这是短的引用</q><br />
+<p>一打有<del>十一</del><ins>十二</ins>件。</p>
+<!--没有下划线的链接-->
+<a href="http://www.baidu.com" style="text-decoration: none">This is a link !</a><br>
+<!--关于表格边框的附加信息-->
+<table border="8" cellpadding="10" cellspacing="10dp" frame="below">
+    <caption>我的标题</caption>
+    <tr>
+        <th>Heading</th>
+        <th colspan="2">Another Heading</th>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td align="right">200</td>
+        <td >300</td>
+    </tr>
+    <tr>
+        <td rowspan="2">400</td>
+        <td >500</td>
+        <td >&nbsp;</td>
+    </tr>
+    <tr>
+        <td >800</td>
+        <td >900</td>
+    </tr>
+</table>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Month</th>
+        <th>Savings</th>
+    </tr>
+    </thead>
+
+    <tfoot>
+    <tr>
+        <td>Sum</td>
+        <td>$180</td>
+    </tr>
+    </tfoot>
+
+    <tbody>
+    <tr>
+        <td>January</td>
+        <td>$100</td>
+    </tr>
+    <tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr>
+    </tbody>
+</table>
+<!--貌似没毛效果啊-->
+<table width="100%" border="1">
+    <col align="left" />
+    <col align="left" />
+    <col align="right" />
+    <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>3476896</td>
+        <td>My first HTML</td>
+        <td>$53</td>
+    </tr>
+</table>
+<ul type="square">无序列表
+    <li>咖啡</li>
+    <li>茶
+        <ul type="circle">
+            <li>红茶</li>
+            <li>绿茶</li>
+        </ul>
+    </li>
+    <li>牛奶</li>
+</ul>
+<ol type="i" start="113">有序列表
+    <li>egg</li>
+    <li>tomato</li>
+    <li>potato</li>
+</ol>
+<dl>自定义列表
+    <dt>计算机</dt>
+    <dd>岂止用来计算的仪器。。。</dd>
+    <dt>显示器</dt>
+    <dd>以视觉方式显示信息的装置。。。</dd>
+</dl>
+<a href="img/Tulips.jpg">
+<img name="picture" src="img/Tulips.jpg" width="256" height="192" alt="picture load error" ismap/></a>
+<a href="second.html"><img border="0" src="img/btn_next.gif"></a>
+<!--<object height="100px" width="200px" data="mp3/brother.mp3" ></object>-->
+<audio controls="controls" height="100" width="100">
+    <source src="mp3/brother.mp3" type="audio/mp3" />
+    <source src="song.ogg" type="audio/ogg" />
+    <embed height="100" width="100" src="mp3/brother.mp3" />
+</audio>
+<a href="mp3/brother.mp3">Play Sound</a>
+<script type="text/javascript" src="http://mediaplayer.yahoo.com/js">
+</script>
+<script type="text/javascript">
+    function popupMsg(msg) {
+        alert(msg)
+    }
+</script>
+</body>
+</html>

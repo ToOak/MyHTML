@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>frame_a</title>
+
+</head>
+<body bgcolor="aqua">
+<script type="text/javascript">
+    <!--
+    document.write("<h1>This is Frame_a !</h1>")
+//    firm();
+    prom();
+    //弹出一个询问框，有确定和取消按钮
+    function firm() {
+        //利用对话框返回的值 （true 或者 false）
+        if (confirm("你确定提交吗？")) {
+            alert("点击了确定");
+        }  else {
+            alert("点击了取消");
+        };
+
+    };
+    //弹出一个输入框，输入一段文字，可以提交
+    function prom() {
+        var name = prompt("请输入您的名字", ""); //将输入的内容赋给变量 name ，
+
+        //这里需要注意的是，prompt有两个参数，前面是提示的话，后面是当对话框出来后，在对话框里的默认值
+        if (name)//如果返回的有内容
+        {
+            alert("欢迎您：" + name)
+        };
+
+    };
+    //-->
+</script>
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+</body>
+</html>
