@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#div0{
+				height: 450px;
+				width: 555px;
+				margin: 20px auto;
+			}
+			#div1{
+				width: 295px;
+				height: 390px;
+				border: 1px solid grey;
+				float: left;
+			}
+		 	#div01,#div02,#div03,#div11,#div12,#div13,#div21,#div22,#div23,#div31,#div32,#div33{
+				width: 80px;
+				height: 80px;
+				border: 1px solid orchid;
+				float: left;
+				margin: 6px 7px;
+				text-align: center;
+			}
+			#div2{
+				width: 250px;
+				height: 250px;
+				border: 1px solid orange;
+				float: right;
+			}
+			.box{
+				background: goldenrod;
+				color:blue;
+			}
+		</style>
+		<script type="text/javascript">
+		
+//			var arr='welcome to 月历！';
+//			alert(arr);
+			
+			window.onload=function(){
+				var oDiv1=document.getElementById('div1');
+				var oDiv=oDiv1.getElementsByTagName('div');
+				var oDiv2=document.getElementById('div2');
+				for(var i=0;i<oDiv.length;i++){
+					oDiv[i].index=i;
+					oDiv[i].onmousemove=function(){
+						for(var j=0;j<oDiv.length;j++){
+							oDiv[j].className='';
+						}
+						this.className='box';
+						if(this.index<9){
+							oDiv2.innerHTML='<img width="240px" height="240px" src="img/00'+(this.index+1)+'.jpg">';
+						}
+						else{
+							oDiv2.innerHTML='<img width="240px" height="240px" src="img/01'+(this.index-9)+'.jpg">';		
+						}
+					};
+					
+//					oDiv[i].onmouseout=function(){
+//						this.className='';
+//					}
+
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div id="div0">
+			<div id="div1">
+				<div id="div01"><br/>一月<br/>January</div>
+				<div id="div02"><br/>二月<br/>February</div>
+				<div id="div03"><br/>三月<br/>March</div>
+				<div id="div11"><br/>四月<br/>April</div>
+				<div id="div12"><br/>五月<br/>May</div>
+				<div id="div13"><br/>六月<br/>June</div>
+				<div id="div21"><br/>七月<br/>July</div>
+				<div id="div22"><br/>八月<br/>August</div>
+				<div id="div23"><br/>九月<br/>Septem</div>
+				<div id="div31"><br/>十月<br/>October</div>
+				<div id="div32"><br/>十一月<br/>Novem</div>
+				<div id="div33"><br/>十二月<br/>Decem</div>
+			</div>
+			<div id="div2"><img width="240px" height="240px" src="img/001.jpg"/></div>
+		</div>
+	</body>
+</html>
