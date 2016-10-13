@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>数码时钟</title>
+</head>
+	<style type="text/css">
+    	body {
+				background:#003;
+				color:#FFF;
+				font-size:50px;
+				font-weight:bolder;
+				
+			}
+			#div1 { margin-top:200px
+				
+				}
+				#div2 { margin-top:20px}
+			
+			
+    </style>
+    <script type="text/javascript">
+    	function toDouble(n){
+				if(n<10){
+					return '0'+n;
+					}else{
+							return ''+n;
+						}
+			
+			}
+			
+			window.onload=function(){
+				var aImg=document.getElementsByTagName('img');
+					function clock(){
+							var nowDate=new Date();
+							var years=nowDate.getFullYear();
+							var month=nowDate.getMonth()+1;
+							var day=nowDate.getDate();
+							var hours=nowDate.getHours();
+							var minutes=nowDate.getMinutes();
+							var seconds=nowDate.getSeconds();
+							
+							var str=''+years+toDouble(month)+toDouble(day)+toDouble(hours)+toDouble(minutes)+toDouble(seconds);
+							var aImg=document.getElementsByTagName('img');
+							for(var i=0;i<aImg.length;i++){
+									aImg[i].src='img/'+str.charAt(i)+'.png';
+								}
+						
+						}
+						clock();
+						setInterval(clock,1000);
+				}
+    </script>
+<body>
+	<div align="center" id="div1">
+    	<img src="img/1.png">
+        <img src="img/1.png">
+        <img src="img/1.png">
+        <img src="img/1.png">
+        年
+        <img src="img/1.png">
+        <img src="img/1.png">
+        月
+        <img src="img/1.png">
+        <img src="img/1.png">
+        日
+        </div>
+    
+   <div align="center" id="div2">
+	<img src="img/0.png">
+    <img src="img/0.png">
+    :
+    <img src="img/0.png">
+    <img src="img/0.png">:
+    <img src="img/0.png">
+    <img src="img/0.png">
+    </div>
+</body>
+</html>
