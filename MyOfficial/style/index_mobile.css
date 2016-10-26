@@ -1,0 +1,79 @@
+
+.equal-dom-width{
+    width: 100%;
+    text-align: center;
+    min-width: 300px;
+    max-width: 380px;
+}
+
+header #head{
+    background: url("../image/bg-main.png");
+    background-size: 36px;
+    text-align: center;
+    height: 220px;
+}
+body{
+    margin: 0px;
+    text-align: center;
+}
+header img{
+    top: -24px;
+    height: 190px;
+}
+
+
+section div{
+    height: 240px;
+    /*overflow: hidden;*/
+}
+section div:nth-child(even){
+    background: #f6ffdd;
+}
+section div:nth-child(odd){
+    background: #FFFFFF;
+}
+
+
+#item-1 img:first-child{
+    margin-top: 40px;
+    height: 200px;
+    /*margin-right: 95px;*/
+}
+#item-1 img:last-child{
+    /*position: absolute;*/
+    margin-bottom: 70px;
+    height: 60px;
+}
+
+#item-2 img:first-child{
+    margin-top: 20px;
+    height: 34px;
+}
+#item-2 img:last-child{
+    margin-top: 3px;
+    height: 180px;
+}
+
+#item-3 img:first-child{
+    position: absolute;
+    margin-top: 60px;
+    height: 180px;
+    margin-left: -100px;
+}
+#item-3 img:last-child{
+    margin-left: -80px;
+    position: absolute;
+    margin-top: 18px;
+    height: 34px;
+}
+
+#item-4 img:first-child{
+    margin-top: 20px;
+    padding-right: 50px;
+    margin-left: 10px;
+    height: 34px;
+}
+#item-4 img:last-child{
+    margin-top: 3px;
+    height: 180px;
+}
