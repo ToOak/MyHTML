@@ -23,6 +23,15 @@ $(function () {
         document.getElementById("change-3-2").src = "image/3-2.png";
         document.getElementById("change-4-1").src = "image/4-1.png";
         scrollEvent();
+
+        document.getElementById("change-1-2").onclick = function (event) {
+            // alert("goto download");
+            console.info("goto donload: " + event.pageX + "," + event.pageY);
+            console.info(document.getElementById("change-1-2").offsetLeft + "," + document.getElementById("change-1-2").offsetTop);
+            if (parseFloat(event.pageY - document.getElementById("change-1-2").offsetTop) >= 30){
+                // alert("download");
+            }
+        }
     }else {
         // alert($("#item-1 img:first-child").attr("src",""));
         // $("#item-1 image:first-child").attr("src","image/mobile_1_1.png");
@@ -31,6 +40,16 @@ $(function () {
         document.getElementById("change-2-1").src = "image/mobile_2_1.png";
         document.getElementById("change-3-2").src = "image/mobile_3_2.png";
         document.getElementById("change-4-1").src = "image/mobile_4_1.png";
+
+        document.getElementById("change-1-2").onclick = function (event) {
+             // alert("goto download");
+            console.info("goto donload: " + event.pageX + "," + event.pageY);
+            console.info(document.getElementById("change-1-2").offsetLeft + "," + document.getElementById("change-1-2").offsetTop);
+            if (parseFloat(event.pageY - document.getElementById("change-1-2").offsetTop) >= 30){
+                alert("download");
+            }
+        }
+
         scrollEventMobile();
     }
 
@@ -38,13 +57,20 @@ $(function () {
     $(window).resize(function() {
         dom_width = $(document).width();
         if (parseFloat(dom_width) > 480){
-
             // $("#item-1 image:first-child").src = "image/1-1.png";
             document.getElementById("change-1-1").src = "image/1-1.png";
             document.getElementById("change-1-2").src = "image/1-2.png";
             document.getElementById("change-2-1").src = "image/2-1.png";
             document.getElementById("change-3-2").src = "image/3-2.png";
             document.getElementById("change-4-1").src = "image/4-1.png";
+            document.getElementById("change-1-2").onclick = function (event) {
+                // alert("goto download");
+                console.info("goto donload: " + event.pageX + "," + event.pageY);
+                console.info(document.getElementById("change-1-2").offsetLeft + "," + document.getElementById("change-1-2").offsetTop);
+                if (parseFloat(event.pageY - document.getElementById("change-1-2").offsetTop) >= 30){
+                    // alert("download");
+                }
+            }
         }else {
             // alert($("#item-1 img:first-child").attr("src",""));
             // $("#item-1 image:first-child").attr("src","image/mobile_1_1.png");
@@ -53,12 +79,30 @@ $(function () {
             document.getElementById("change-2-1").src = "image/mobile_2_1.png";
             document.getElementById("change-3-2").src = "image/mobile_3_2.png";
             document.getElementById("change-4-1").src = "image/mobile_4_1.png";
+
+            document.getElementById("change-1-2").onclick = function (event) {
+                // alert("goto download");
+                console.info("goto donload: " + event.pageX + "," + event.pageY);
+                console.info(document.getElementById("change-1-2").offsetLeft + "," + document.getElementById("change-1-2").offsetTop);
+                if (parseFloat(event.pageY - document.getElementById("change-1-2").offsetTop) >= 30){
+                    alert("download");
+                }
+            }
         }
         console.info("width: " + dom_width)
     });
     // $(".equal-dom-width").css("width",dom_width);
 
 });
+
+// window.onload = function () {
+//     document.getElementById("change-1-2").onclick = function (event) {
+//         // alert("goto download");
+//         console.info("goto donload: " + event.pageX + "," + event.pageY);
+//         console.info(document.getElementById("change-1-2").offsetLeft + "," + document.getElementById("change-1-2").offsetTop);
+//     }
+//
+// }
 
 $(document).scroll(function(){
     initValues();
