@@ -38,14 +38,11 @@ section div:nth-child(odd){
     /*margin-top: 0px;*/
     margin-bottom: 0px;
     height: 400px;
-    /*width: 382.5px;*/
-    /*height: 0px;*/
     opacity: 0;
-    /*z-index: 0;*/
 }
 #item-1 img:last-child{
     position: absolute;
-    margin-top: 140px;
+    margin-top: 115px;
     /*margin-left: 30px;*/
     margin-left: 230px;
     height: 160px;
