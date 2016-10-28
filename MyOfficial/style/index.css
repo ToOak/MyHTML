@@ -19,14 +19,14 @@ header img{
 }
 
 
-section div{
+section>div{
     height: 400px;
     overflow: hidden;
 }
-section div:nth-child(even){
+section>div:nth-child(even){
     background: #f6ffdd;
 }
-section div:nth-child(odd){
+section>div:nth-child(odd){
     background: #FFFFFF;
 }
 
@@ -96,4 +96,14 @@ section div:nth-child(odd){
     height: 350px;
     margin-left: 300px;
     opacity: 0;
+}
+
+#item-2 div{
+    width: 660px;
+    display: inline;
+}
+
+#item-4 div{
+    width: 660px;
+    display: inline;
 }
