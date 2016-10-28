@@ -22,14 +22,14 @@ header img{
 }
 
 
-section div{
+section>div{
     height: 240px;
     overflow: hidden;
 }
-section div:nth-child(even){
+section>div:nth-child(even){
     background: #f6ffdd;
 }
-section div:nth-child(odd){
+section>div:nth-child(odd){
     background: #FFFFFF;
 }
 

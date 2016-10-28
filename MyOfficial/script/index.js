@@ -10,8 +10,11 @@ var item_height3;
 var item_height4;
 var sum_height;
 
+var deviceType;
+
 
 $(function () {
+    deviceType = getDeviceType();
     initValues();
     if (parseFloat(dom_width) > 480){
 
@@ -40,14 +43,38 @@ $(function () {
              // alert("goto download");
             if (parseFloat(event.pageY - document.getElementById("change-1-2").offsetTop) >= 30){
                 console.info("download");
-                // window.open("https://itunes.apple.com/cn/app/jian-kang-ri-ji-pei-yang-jian/id1074251079?mt=8");
-                window.open("http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk");
+                if (deviceType == 'ios'){
+                    window.open("https://itunes.apple.com/cn/app/jian-kang-ri-ji-pei-yang-jian/id1074251079?mt=8");
+                }else if (deviceType == 'android'){
+
+                    window.open("http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk");
+                }
+
             }
         }
 
         scrollEventMobile();
     }
 
+    /**
+     * 获取设备类型
+     * @returns {*}
+     */
+    function getDeviceType() {
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            console.log('android')
+            return 'android';
+        }else if(isiOS){
+            console.log('ios')
+            return 'ios'
+        }else{
+            console.log('others')
+            return 'null';
+        }
+    }
 
     $(window).resize(function() {
         dom_width = $(document).width();
@@ -75,7 +102,12 @@ $(function () {
                 // alert("goto download");
                 if (parseFloat(event.pageY - document.getElementById("change-1-2").offsetTop) >= 30){
                     console.info("download");
-                    window.open("https://itunes.apple.com/cn/app/jian-kang-ri-ji-pei-yang-jian/id1074251079?mt=8");
+                    if (deviceType == 'ios'){
+                        window.open("https://itunes.apple.com/cn/app/jian-kang-ri-ji-pei-yang-jian/id1074251079?mt=8");
+                    }else if (deviceType == 'android'){
+
+                        window.open("http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk");
+                    }
                 }
             }
         }
