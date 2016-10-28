@@ -149,7 +149,9 @@ function scrollEvent() {
     sum_height = $(document).scrollTop() + $(window).height();
     // console.info("scrollEvent: " + sum_height);
     if (( parseFloat($("#item-1 img:first-child").css("opacity")) == 0
-        || parseFloat($("#item-1 img:last-child").css("opacity")) == 0)
+        || parseFloat($("#item-1 img:last-child").css("opacity")) == 0
+        || parseFloat($("#item-1 img:first-child").css("margin-top")) != 0
+        || parseFloat($("#item-1 img:last-child").css("margin-left")) != 30)
         && sum_height >= head_height){
 
         // $("#item-1 img:first-child").slideDown(2000);
@@ -160,7 +162,9 @@ function scrollEvent() {
     }
 
     if ( ( parseFloat($("#item-2 img:first-child").css("opacity")) == 0
-        ||  parseFloat($("#item-2 img:last-child").css("opacity")) == 0)
+        ||  parseFloat($("#item-2 img:last-child").css("opacity")) == 0
+        || parseFloat($("#item-2 img:first-child").css("margin-left")) != -10
+        ||  parseFloat($("#item-2 img:last-child").css("margin-top")) != 50)
         && sum_height >= (head_height + item_height1)){
 
         console.info("action_2");
@@ -169,7 +173,9 @@ function scrollEvent() {
     }
 
     if ( ( parseFloat($("#item-3 img:first-child").css("opacity")) == 0
-        ||  parseFloat($("#item-3 img:last-child").css("opacity")) == 0)
+        ||  parseFloat($("#item-3 img:last-child").css("opacity")) == 0
+        || parseFloat($("#item-3 img:first-child").css("margin-top")) != 50
+        ||  parseFloat($("#item-3 img:last-child").css("margin-left")) != 30)
         && sum_height >= (head_height + item_height1 + item_height2)){
 
         console.info("action_3");
@@ -178,7 +184,9 @@ function scrollEvent() {
     }
 
     if ( ( parseFloat($("#item-4 img:first-child").css("opacity")) == 0
-        ||  parseFloat($("#item-4 img:last-child").css("opacity")) == 0)
+        ||  parseFloat($("#item-4 img:last-child").css("opacity")) == 0
+        || parseFloat($("#item-4 img:first-child").css("margin-left")) != -10
+        ||  parseFloat($("#item-4 img:last-child").css("margin-top")) != 50)
         && sum_height >= (head_height + item_height1 + item_height2 + item_height3)){
 
         console.info("action_4");
