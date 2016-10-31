@@ -47,8 +47,8 @@ $(function () {
                 if (deviceType == 'ios'){
                     window.open("https://itunes.apple.com/cn/app/jian-kang-ri-ji-pei-yang-jian/id1074251079?mt=8");
                 }else if (deviceType == 'android'){
-
-                    window.open("http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk");
+                    // window.open("http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk");
+                    window.location.href = "http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk";
                 }
 
             }
