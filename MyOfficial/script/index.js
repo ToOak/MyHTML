@@ -16,8 +16,21 @@ var deviceType;
 $(function () {
     deviceType = getDeviceType();
     console.info("deviceType: " + deviceType);
+    if (deviceType == 'android' || deviceType == 'ios'){
+        var link = document.createElement("link");
+        link.setAttribute("rel", "stylesheet" );
+        link.setAttribute("href", "style/index_mobile.css");
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(link);
+    }else if (deviceType == 'null'){
+        var link = document.createElement("link");
+        link.setAttribute("rel", "stylesheet" );
+        link.setAttribute("href", "style/index.css");
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(link);
+    }
     initValues();
-    if (parseFloat(dom_width) > 480){
+    if (deviceType == 'null'){
 
         // $("#item-1 image:first-child").src = "image/1-1.png";
         document.getElementById("change-1-1").src = "image/1-1.png";
@@ -31,7 +44,7 @@ $(function () {
         }
 
         scrollEvent();
-    }else {
+    }else if (deviceType == 'android' || deviceType == 'ios'){
         // alert($("#item-1 img:first-child").attr("src",""));
         // $("#item-1 image:first-child").attr("src","image/mobile_1_1.png");
         document.getElementById("change-1-1").src = "image/mobile_1_1.png";
@@ -79,39 +92,6 @@ $(function () {
 
     $(window).resize(function() {
         dom_width = $(document).width();
-        if (parseFloat(dom_width) > 480){
-            // $("#item-1 image:first-child").src = "image/1-1.png";
-            document.getElementById("change-1-1").src = "image/1-1.png";
-            document.getElementById("change-1-2").src = "image/1-2.png";
-            document.getElementById("change-2-1").src = "image/2-1.png";
-            document.getElementById("change-3-2").src = "image/3-2.png";
-            document.getElementById("change-4-1").src = "image/4-1.png";
-
-            document.getElementById("change-1-2").onclick = function (event) {
-
-            };
-        }else {
-            // alert($("#item-1 img:first-child").attr("src",""));
-            // $("#item-1 image:first-child").attr("src","image/mobile_1_1.png");
-            document.getElementById("change-1-1").src = "image/mobile_1_1.png";
-            document.getElementById("change-1-2").src = "image/mobile_1_2.png";
-            document.getElementById("change-2-1").src = "image/mobile_2_1.png";
-            document.getElementById("change-3-2").src = "image/mobile_3_2.png";
-            document.getElementById("change-4-1").src = "image/mobile_4_1.png";
-
-            document.getElementById("change-1-2").onclick = function (event) {
-                // alert("goto download");
-                if (parseFloat(event.pageY - document.getElementById("change-1-2").offsetTop) >= 30){
-                    console.info("download");
-                    if (deviceType == 'ios'){
-                        window.open("https://itunes.apple.com/cn/app/jian-kang-ri-ji-pei-yang-jian/id1074251079?mt=8");
-                    }else if (deviceType == 'android'){
-
-                        window.open("http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk");
-                    }
-                }
-            }
-        }
         console.info("width: " + dom_width)
     });
     // $(".equal-dom-width").css("width",dom_width);
@@ -120,11 +100,9 @@ $(function () {
 
 $(document).scroll(function(){
     initValues();
-    dom_width = $(document).width();
-    // console.info("width: " + dom_width + " scroll: " + $(document).scrollTop() + " height: " + $(window).height());
-    if (parseFloat(dom_width) > 480) {
+    if (deviceType == 'null') {
         scrollEvent();
-    }else {
+    }else if (deviceType == 'android' || deviceType == 'ios'){
         scrollEventMobile();
     }
 });
