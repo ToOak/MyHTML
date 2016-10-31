@@ -15,6 +15,7 @@ var deviceType;
 
 $(function () {
     deviceType = getDeviceType();
+    console.info("deviceType: " + deviceType);
     initValues();
     if (parseFloat(dom_width) > 480){
 
