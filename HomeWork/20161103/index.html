@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+</head>
+<body>
+<form id="registForm" method="post">
+    <p>我是一个注册页面</p>
+    账号：<input type="text" id="account" >
+    <br>
+    密码：<input type="password" id="password">
+    <br><br>
+    省：
+    <select id="province">
+        <option value="0" disabled selected>==请选择==</option>
+        <option value="1">河南省</option>
+    </select>
+    市：
+    <select id="city">
+        <option value="0" disabled selected>==请选择==</option>
+        <option value="1">平顶山市</option>
+        <option value="2">信阳市</option>
+    </select>
+    区：
+    <select id="area">
+        <option value="0" disabled selected>==请选择==</option>
+        <option value="1">郏县</option>
+        <option value="2">宝丰县</option>
+        <option value="3">鲁山县</option>
+        <option value="4">舞钢市</option>
+        <option value="5">汝州市</option>
+        <option value="6">叶县</option>
+        <option value="7">石龙区</option>
+        <option value="8">湛河区</option>
+        <option value="9">新华区</option>
+        <option value="10">卫东区</option>
+    </select>
+    <br><br>
+    性别：
+    <label><input type="radio" name="gender" id="male" value="1">男</label>
+    <label><input type="radio" name="gender" id="female" value="0">女</label>
+    <br>
+    爱好：
+    <input type="checkbox" id="music" name="hobby"><label for="music">音乐</label>
+    <input type="checkbox" id="sport" name="hobby"><label for="sport">运动</label>
+    <br><br>
+    <!--<input type="submit" id="submit" value="提交">-->
+    <input type="button" id="submit" value="提交">
+
+</form>
+<script src="script/regist.js"></script>
+</body>
+</html>
