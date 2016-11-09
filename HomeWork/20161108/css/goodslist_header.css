@@ -1,0 +1,67 @@
+body{
+    margin: 0px;
+    min-width: 400px;
+}
+
+header{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    min-width: 400px;
+}
+#title{
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #CCCCCC;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+#arrow_left{
+    position: absolute;
+    float: left;
+    top: 10px;
+    left: 20px;
+    height: 60px;
+    width: 31.5px;
+    background: url(../images/logo_arrow_left.png) no-repeat center;
+    background-size: 50%;
+}
+#list_title{
+    color:#333333;
+    font-size: 30px;
+    padding-top: 23px;
+}
+#search{
+    margin-top: -30px;
+    float: right;
+    color: #454545;
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+#option_board{
+    overflow: hidden;
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid #CCCCCC;
+    text-align: center;
+    display: flex;
+}
+.option_item{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /*float: left;*/
+    /*width: 33%;*/
+    flex: 1;
+    text-align: center;
+    color: #333333;
+    font-size: 28px;
+    /*font-weight: bold;*/
+    border-left: 1px solid #e6e6e6;
+}
+.option_item_selected{
+    color: #ff6666;
+}
+
+
+

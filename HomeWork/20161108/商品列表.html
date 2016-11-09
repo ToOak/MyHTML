@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>订单列表</title>
+	<link href="css/goodslist_header.css" rel="stylesheet">
+	<link href="css/goodslist.css" rel="stylesheet">
+	<script type="text/javascript">
+		(function (doc, win) {
+			var docEl = doc.documentElement,
+					isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+					dpr = isIOS? Math.min(win.devicePixelRatio, 3) : 1,
+					dpr = window.top === window.self? dpr : 1, //被iframe引用时，禁止缩放
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+			docEl.dataset.dpr = dpr;
+			var recalc = function () {
+				var width = docEl.clientWidth;
+				if (width / dpr > 750) {
+					width = 750 * dpr;
+				}
+				docEl.dataset.width = width
+				docEl.dataset.percent = 100 * (width / 750);
+				docEl.style.fontSize = 100 * (width / 750) + 'px';
+			};
+			recalc();
+			if (!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+		})(document, window);
+	</script>
+</head>
+<body>
+<header>
+	<div id="title">
+		<div id="arrow_left"></div>
+		<div id="list_title">商品列表</div>
+		<div id="search">搜索</div>
+	</div>
+	<div id="option_board">
+		<div class="option_item option_item_selected">全部</div>
+		<div class="option_item">处方药</div>
+		<div class="option_item">非处方药</div>
+	</div>
+
+</header>
+
+<section id="goods_list">
+	<section class="goods_item">
+		<div class="goods_icon">
+			<div class="discount_icon"></div>
+			<div class="goods_explain">适用于儿童营养缺乏</div>
+		</div>
+	</section>
+</section>
+</body>
+</html>
