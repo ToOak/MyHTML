@@ -124,4 +124,13 @@ window.onload = function () {
         }
     }
 
+    area.onchange = function () {
+        if (parseInt(province.value) == 0){
+            province.value = 1;
+        }
+        if (parseInt(city.value) == 0){
+            city.value = 1;
+        }
+    }
+
 }
