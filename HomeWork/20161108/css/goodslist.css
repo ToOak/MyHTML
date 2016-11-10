@@ -2,6 +2,9 @@
     margin-top: 190px;
     border-top: 1px solid #eeeeee;
     text-align: center;
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #goods_list .goods_item{
@@ -13,19 +16,91 @@
 
 #goods_list .goods_icon{
     background: url("../images/pro_img.jpg") no-repeat center;
-    background-size: 75%;
-    height: 285px;
-    width: 285px;
+    /*background-position-y: 50px;*/
+    background-size: 100%;
+    height: 230px;
+    width: 230px;
+    margin-top: 40px;
     position: absolute;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
 }
 
 #goods_list .goods_explain{
     position: relative;
-    top: 235px;
     text-align: center;
     background: #000000;
+    padding-top: 10px;
     color: #FFFFFF;
     opacity: 0.5;
+    font-size: 24px;
+    height: 40px;
+    top: 180px;
+}
+#goods_list .discount_icon{
+    background: url("../images/new_ico.png") no-repeat center;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: -18px;
+    left: -15px;
+}
+
+#goods_list .goods_info{
+    overflow: hidden;
+    position: absolute;
+    margin-left: 270px;
+    /*top: 20px;*/
+    margin-top: 40px;
+    text-align: left;
+    width: 450px;
+}
+#goods_list .goods_name{
+    /*position: absolute;*/
     font-size: 28px;
-    height: 50px;
+    font-weight: bold;
+    color: #333333;
+}
+#goods_list .goods_amount{
+    padding-top: 8px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333333;
+}
+#goods_list .goods_detail_explain{
+    padding-top: 10px;
+    font-size: 21px;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow:ellipsis;
+    color: #666666;
+}
+#goods_list .goods_price{
+    padding-top: 80px;
+    float: left;
+    font-size: 28px;
+    color: #ff0000;
+
+}
+#goods_list .goods_price_old{
+    font-size: 20px;
+    padding-top: 88px;
+    float: left;
+    color: #666666;
+    padding-left: 20px;
+    text-decoration: line-through;
+}
+#goods_list .buy_button{
+    height: 35px;
+    padding-top: 10px;
+    width: 120px;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 80px;
+    background: #ff6666;
+    color: white;
+    float: right;
+    margin-right: 15px;
+    border-radius: 6px;
 }

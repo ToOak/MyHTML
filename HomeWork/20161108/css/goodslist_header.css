@@ -1,6 +1,7 @@
 body{
     margin: 0px;
     min-width: 400px;
+    font-family:YouYuan, FZShuTi, KaiTi, LiSu;
 }
 
 header{
@@ -8,6 +9,7 @@ header{
     top: 0px;
     width: 100%;
     min-width: 400px;
+    z-index: 1;
 }
 #title{
     width: 100%;
@@ -30,6 +32,7 @@ header{
     color:#333333;
     font-size: 30px;
     padding-top: 23px;
+    font-weight: bold;
 }
 #search{
     margin-top: -30px;
@@ -37,6 +40,7 @@ header{
     color: #454545;
     font-size: 24px;
     margin-right: 20px;
+    font-weight: bold;
 }
 
 #option_board{
@@ -46,6 +50,7 @@ header{
     border-bottom: 1px solid #CCCCCC;
     text-align: center;
     display: flex;
+    background: white;
 }
 .option_item{
     margin-top: 30px;
@@ -53,6 +58,7 @@ header{
     /*float: left;*/
     /*width: 33%;*/
     flex: 1;
+    font-weight: bold;
     text-align: center;
     color: #333333;
     font-size: 28px;
