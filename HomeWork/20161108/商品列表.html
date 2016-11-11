@@ -5,6 +5,7 @@
 	<title>订单列表</title>
 	<link href="css/goodslist_header.css" rel="stylesheet">
 	<link href="css/goodslist.css" rel="stylesheet">
+    <script src="script/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript">
 		(function (doc, win) {
 			var docEl = doc.documentElement,
@@ -26,6 +27,26 @@
 			if (!doc.addEventListener) return;
 			win.addEventListener(resizeEvt, recalc, false);
 		})(document, window);
+
+        var dom_width;
+        $(function () {
+            dom_width = $(window).width();
+            resetItemWidth();
+        })
+
+        $(window).resize(function() {
+            resetItemWidth();
+        });
+
+        function resetItemWidth() {
+            dom_width = $(window).width();
+            if (dom_width >= 800){
+                console.log("dow_width: " + dom_width);
+                $("#goods_list .goods_info").css("width", dom_width - 330);
+            }
+
+        }
+
 	</script>
 </head>
 <body>
@@ -52,7 +73,7 @@
 		<section class="goods_info">
 			<div class="goods_name">和安 复方氨基酸胶囊（8-11）</div>
 			<div class="goods_amount">350mg*30粒</div>
-			<div class="goods_detail_explain">用于预防和治疗因缺乏必须氨基酸与维生素引起的，适用于儿童营养缺乏。</div>
+			<div class="goods_detail_explain">用于预防和治疗因缺乏必须氨基酸与维生素引起的，适用于儿童营养缺乏。用于预防和治疗因缺乏必须氨基酸与维生素引起的，适用于儿童营养缺乏。</div>
 			<div class="goods_price">&yen60.00</div>
 			<div class="goods_price_old">&yen60.00</div>
 			<div class="buy_button">购买</div>
