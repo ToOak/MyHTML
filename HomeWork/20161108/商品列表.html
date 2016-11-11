@@ -31,20 +31,17 @@
         var dom_width;
         $(function () {
             resetItemWidth();
-        })
-
+        });
         $(window).resize(function() {
             resetItemWidth();
         });
-
         function resetItemWidth() {
             dom_width = $(window).width();
             if (dom_width >= 800){
                 console.log("dow_width: " + dom_width);
                 $("#goods_list .goods_info").css("width", dom_width - 330);
             }
-
-        }
+        };
 
 	</script>
 </head>
