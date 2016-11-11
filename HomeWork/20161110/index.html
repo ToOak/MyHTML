@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var result = "第一题： \n";
+    result += "'3'-2 --> " + ('3' - 2) + "\n";
+    result += "'3'+2 --> " + ('3' + 2) + "\n";
+    result += "null==undefined --> " + (null == undefined) + "\n";
+    result += "null===undefined --> " + (null === undefined) + "\n";
+
+    result += "[]==false --> " + ([] == false) + "\n";
+    if ([]){
+        result += "if([]){console.log(999)} --> " + "999\n";
+        console.log(999);
+    }else {
+        result += "if([]){console.log(999)} --> " + "\n";
+    }
+
+    result += "'0'==false --> " + ('0' == false) + "\n";
+    if('0'){
+        result += "if('0'){console.log(999)} --> " + "999\n";
+        console.log(999);
+    }else {
+        result += "if('0'){console.log(999)} --> " + "\n";
+    }
+
+    result += "\'\'==false --> " +('' == false) + "\n";
+    if(''){
+        result += "if(''){console.log(999)} --> " + "999\n";
+        console.log(999);
+    }else {
+        result += "if(''){console.log(999)} --> " + "\n";
+    }
+    alert(result);
+
+//  补充完成函数myDate使其输出格式为今天的日期形式（eg:2016-11-11 星期一）
+
+    function myDate(){
+        var today = '';
+        //write your code
+        var date = new Date();
+        today = date.getYear() + "-" + (date.getMonth() + 1) +"-" + date.getDate()
+                + "   星期" + "日一二三四五六".charAt(date.getDay())
+                + "   " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        return today;
+    }
+    alert("第二题（当前日期）：\n" + myDate());
+
+//    【思考题】完成一个构造函数House，自己添加属性或者方法，并实例化一个myhouse。
+
+    function House(name, addr) {
+        this.name = name;
+        this.addr = addr;
+
+        this.toString = function () {
+            return "name: " + this.name
+                    + "    addr: " + this.addr + "\n";
+        }
+    }
+
+    House.getInfo = function () {
+        return this.prototype.what();
+    }
+
+    House.prototype.what = function () {
+        return "This is a House\n";
+    }
+
+    var house = new House("flat_share","P.szechuanica");
+
+    alert("第四题（House实例）：\n" + house.what() + house.toString());
+
+</script>
+</body>
+</html>
