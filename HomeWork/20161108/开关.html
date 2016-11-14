@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <title>开关</title>
     <link rel="stylesheet" href="css/开关.css">
+    <script>
+        window.onload = function () {
+            var switch_1 = document.getElementById("switch_1");
+            var switch_2 = document.getElementById("switch_2");
+            var switch_2_sub = document.getElementById("switch_2_sub");
+            switch_2.onclick = function () {
+                switch_2.className = ( switch_2.className == "open") ? "close" : "open";
+                switch_2_sub.className = ( switch_2_sub.className == "open_sub") ? "close_sub" : "open_sub";
+
+            }
+        }
+    </script>
 </head>
 <body>
-<div class="close">
-    <div class="close_sub"></div>
+<div id="switch_1" class="close">
+    <div  id="switch_1_sub" class="close_sub"></div>
 </div>
-<div class="open">
-    <div class="open_sub"></div>
+<div id="switch_2" class="open">
+    <div id="switch_2_sub" class="open_sub"></div>
 </div>
 
 </body>
