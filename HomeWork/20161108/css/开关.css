@@ -1,0 +1,33 @@
+.close{
+    width: 110px;
+    height: 50px;
+    background: #CCCCCC;
+    border: 1px solid #999999;
+    border-radius: 23px;
+    margin: 5px;
+}
+.close_sub{
+    width: 46px;
+    height: 46px;
+    border-radius: 23px;
+    background: #FFFFFF;
+    margin-top: 2px;
+    margin-left: 4px;
+}
+
+.open{
+    margin: 5px;
+    width: 110px;
+    height: 50px;
+    background: #2ea1d9;
+    border: 1px solid #2ea1d9;
+    border-radius: 23px;
+}
+.open_sub{
+    width: 46px;
+    height: 46px;
+    border-radius: 23px;
+    background: #FFFFFF;
+    margin-top: 2px;
+    margin-left: 60px;
+}
