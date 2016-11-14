@@ -3,7 +3,7 @@
     height: 50px;
     background: #CCCCCC;
     border: 1px solid #999999;
-    border-radius: 23px;
+    border-radius: 30px;
     margin: 5px;
 }
 .close_sub{
@@ -21,7 +21,7 @@
     height: 50px;
     background: #2ea1d9;
     border: 1px solid #2ea1d9;
-    border-radius: 23px;
+    border-radius: 30px;
 }
 .open_sub{
     width: 46px;
@@ -30,4 +30,95 @@
     background: #FFFFFF;
     margin-top: 2px;
     margin-left: 60px;
+}
+
+.close_sub:hover{
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    -o-animation-direction: alternate;
+    animation-direction: alternate;;
+    animation:myfirst 1s;
+    -moz-animation:myfirst 1s; /* Firefox */
+    -webkit-animation:myfirst 1s; /* Safari and Chrome */
+    -o-animation:myfirst 1s; /* Opera */
+}
+
+@keyframes myfirst
+{
+    from {
+        width: 46px;
+        height: 46px;
+        border-radius: 23px;
+        background: #FFFFFF;
+        margin-top: 2px;
+        margin-left: 4px;
+    }
+    to {
+        width: 46px;
+        height: 46px;
+        border-radius: 23px;
+        background: #FFFFFF;
+        margin-top: 2px;
+        margin-left: 60px;
+    }
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+    from {
+        width: 46px;
+        height: 46px;
+        border-radius: 23px;
+        background: #FFFFFF;
+        margin-top: 2px;
+        margin-left: 4px;
+    }
+    to {
+        width: 46px;
+        height: 46px;
+        border-radius: 23px;
+        background: #FFFFFF;
+        margin-top: 2px;
+        margin-left: 60px;
+    }
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+    from {
+        width: 46px;
+        height: 46px;
+        border-radius: 23px;
+        background: #FFFFFF;
+        margin-top: 2px;
+        margin-left: 4px;
+    }
+    to {
+        width: 46px;
+        height: 46px;
+        border-radius: 23px;
+        background: #FFFFFF;
+        margin-top: 2px;
+        margin-left: 60px;
+    }
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+    from {
+        width: 46px;
+        height: 46px;
+        border-radius: 23px;
+        background: #FFFFFF;
+        margin-top: 2px;
+        margin-left: 4px;
+    }
+    to {
+        width: 46px;
+        height: 46px;
+        border-radius: 23px;
+        background: #FFFFFF;
+        margin-top: 2px;
+        margin-left: 60px;
+    }
 }
