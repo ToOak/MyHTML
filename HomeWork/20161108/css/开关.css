@@ -43,6 +43,12 @@
     -o-animation:myfirst 1s; /* Opera */
 }
 
+.close:hover{
+    -webkit-animation:myanimation 1s;
+    -o-animation:myanimation 1s;
+    animation:myanimation 1s;
+}
+
 @keyframes myfirst
 {
     from {
@@ -120,5 +126,24 @@
         background: #FFFFFF;
         margin-top: 2px;
         margin-left: 60px;
+    }
+}
+
+@keyframes myanimation {
+    from{
+        width: 110px;
+        height: 50px;
+        background: #CCCCCC;
+        border: 1px solid #999999;
+        border-radius: 30px;
+        margin: 5px;
+    }
+    to{
+        margin: 5px;
+        width: 110px;
+        height: 50px;
+        background: #2ea1d9;
+        border: 1px solid #2ea1d9;
+        border-radius: 30px;
     }
 }
