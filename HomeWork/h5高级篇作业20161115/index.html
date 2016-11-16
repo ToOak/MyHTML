@@ -22,6 +22,8 @@
         var volumePrg;
         var volumeValue;
         var videoPrg;
+        var prgCurrentTxt;
+        var prgMaxTxt;
 
         window.onload = function () {
 
@@ -44,8 +46,17 @@
             volumeValue = document.getElementById("volumeValue");
             volumePrg.value = video.volume * 100;
             volumeValue.innerHTML = volumePrg.value;
+            videoPrg = document.getElementById("videoPrg");
+            videoPrg.max = video.duration;
+            prgMaxTxt = document.getElementById("prgMaxTxt");
+            prgMaxTxt.innerHTML = parseInt(video.duration / 60) + " : " +  parseInt(video.duration % 60);
+            prgCurrentTxt = document.getElementById("prgCurrentTxt");
+            prgCurrentTxt.innerHTML = parseInt(video.currentTime / 60) + " : " +  parseInt(video.currentTime % 60);
+
+            getVideoPrg();
 
         };
+
 
         viewEvents = function () {
             playButton.onclick = vidplay;
@@ -57,7 +68,22 @@
                 skip(10);
             };
             volumePrg.onchange = resetVolume;
+            videoPrg.onclick = function (event) {
+                var width = parseFloat(videoPrg.style.width.replace("px",""));
+                videoPrg.value = videoPrg.max * (event.offsetX / width);
+                video.currentTime = video.duration * (event.offsetX / width);
+                prgCurrentTxt.innerHTML = parseInt(video.currentTime / 60) + " : " +  parseInt(video.currentTime % 60);
+
+            }
         };
+
+        getVideoPrg = function () {
+            if (video.played){
+                videoPrg.value = video.currentTime;
+                prgCurrentTxt.innerHTML = parseInt(video.currentTime / 60) + " : " +  parseInt(video.currentTime % 60);
+            }
+            setTimeout(getVideoPrg,100);
+        }
 
         function drawCirle() {
             var canvasBox = document.getElementById("canvasBox");
@@ -74,6 +100,7 @@
             if(video.paused) {
                 video.play();
                 playButton.textContent ="暂停";
+                getVideoPrg();
             }else{
                 video.pause();
                 playButton.textContent ="播放";
@@ -105,9 +132,13 @@
         <button id="play">播放</button>
         <button id="fastFwd">快进</button>
         <br><br>
+        <span id="prgCurrentTxt"></span>
+        <input type="range" value="0" style="width: 500px;position: relative;top: 5px" max="100" id="videoPrg">
+        <span id="prgMaxTxt"></span>
+        <br><br>
         <span>音量：</span><input type="range" id="volume" value="0" max="100" style="position: relative;top: 5px;margin-right: 13px"></input><span id="volumeValue"></span>
     </div>
-    <video width="500" id="video" style="padding-top: 5px" preload="auto" poster="img/temp.jpg" >
+    <video width="500" id="video" style="padding-top: 5px" preload="auto" poster="img/temp.jpg">
         <!--<source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type="video/mp4"/>-->
         <source src="video/OrientationDay.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
