@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>H5高级篇</title>
+    <style type="text/css" rel="stylesheet">
+        .videoControls button{
+            margin-top: 5px;
+        }
+        .videoControls button:last-child{
+            margin-right: 10px;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        var video;
+        var restartButton;
+        var fastBackButton;
+        var playButton;
+        var fastfwdButton;
+        var volumePrg;
+        var volumeValue;
+        var videoPrg;
+
+        window.onload = function () {
+
+            //        视频控制
+            initViews();
+            viewEvents();
+
+            //        canvas画圆
+            drawCirle();
+
+        }
+
+        initViews = function () {
+            video = document.getElementById("video");
+            playButton = document.getElementById("play");
+            restartButton = document.getElementById("restart");
+            fastBackButton = document.getElementById("fastBack");
+            fastfwdButton = document.getElementById("fastFwd");
+            volumePrg = document.getElementById("volume")
+            volumeValue = document.getElementById("volumeValue");
+            volumePrg.value = video.volume * 100;
+            volumeValue.innerHTML = volumePrg.value;
+
+        };
+
+        viewEvents = function () {
+            playButton.onclick = vidplay;
+            restartButton.onclick = restart;
+            fastBackButton.onclick = function () {
+                skip(-10);
+            };
+            fastfwdButton.onclick = function () {
+                skip(10);
+            };
+            volumePrg.onchange = resetVolume;
+        };
+
+        function drawCirle() {
+            var canvasBox = document.getElementById("canvasBox");
+            var context = canvasBox.getContext("2d");
+            context.beginPath();
+            context.fillStyle = "#6a83ff";
+            context.strokeStyle = "#4d4e53";
+            context.arc(150,150,80,0,2 * Math.PI);
+            context.fill();
+            context.stroke();
+        }
+
+        function vidplay() {
+            if(video.paused) {
+                video.play();
+                playButton.textContent ="暂停";
+            }else{
+                video.pause();
+                playButton.textContent ="播放";
+            }
+        }
+
+        function restart() {
+            video.currentTime = 0;
+        }
+
+        function skip(value) {
+            video.currentTime += value;
+        }
+
+        function resetVolume() {
+            video.volume = volumePrg.value / 100;
+            volumeValue.innerHTML = volumePrg.value;
+        }
+
+    </script>
+
+</head>
+<body style="text-align: center">
+
+<section style="text-align: center">
+    <div class="videoControls" style="text-align: center;">
+        <button id="restart">重新播放</button>
+        <button id="fastBack">快退</button>
+        <button id="play">播放</button>
+        <button id="fastFwd">快进</button>
+        <br><br>
+        <span>音量：</span><input type="range" id="volume" value="0" max="100" style="position: relative;top: 5px;margin-right: 13px"></input><span id="volumeValue"></span>
+    </div>
+    <video width="500" id="video" style="padding-top: 5px" preload="auto" poster="img/temp.jpg" >
+        <!--<source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type="video/mp4"/>-->
+        <source src="video/OrientationDay.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+    </video>
+</section>
+
+<section>
+    <canvas width="300" height="300" id="canvasBox">
+    </canvas>
+</section>
+
+</body>
+</html>

@@ -13,6 +13,7 @@
     result += "null===undefined --> " + (null === undefined) + "\n";
 
     result += "[]==false --> " + ([] == false) + "\n";
+    result += "![]==false --> " + (![] == false) + "\n";
     if ([]){
         result += "if([]){console.log(999)} --> " + "999\n";
         console.log(999);
