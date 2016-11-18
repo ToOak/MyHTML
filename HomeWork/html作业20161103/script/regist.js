@@ -122,6 +122,9 @@ window.onload = function () {
                 + "<option value='9'>新华区</option>"
                 + "<option value='10'>卫东区</option>";
         }
+        if (parseInt(province.value) == 0){
+            province.value = 1;
+        }
     }
 
     area.onchange = function () {
