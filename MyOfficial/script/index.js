@@ -60,8 +60,22 @@ $(function () {
                 if (deviceType == 'ios'){
                     window.open("https://itunes.apple.com/cn/app/jian-kang-ri-ji-pei-yang-jian/id1074251079?mt=8");
                 }else if (deviceType == 'android'){
-                    // window.open("http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk");
-                    window.location.href = "http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk";
+                    if (!is_browser){
+                        // alert("请在浏览器中打开此网页");
+                        var div = document.createElement('div');
+                        div.style.display = 'none';
+                        div.innerHTML = '<iframe id="schema" src="//imtt.dd.qq.com/16891/409F621080EA73EF9AB1E64F68220D7C.apk?fsname=com.yz.healthy_1.3.0_4.apk&csr=4d5s" scrolling="no" width="0" height="0"></iframe>';
+//                        div.innerHTML = '<iframe id="schema" src="download.html" scrolling="no" width="0" height="0"></iframe>';
+                        document.body.appendChild(div);
+                        setTimeout(function () {
+                            document.body.removeChild(div);
+                        }, 1000);
+                    }else {
+                        // window.open("http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk","","",false);
+                        window.location.href = "http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk";
+                    }
+                    // // window.open("http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk");
+                    // window.location.href = "http://jkm.1zjk.com/h5/static/zip/Android_1.3.0.apk";
                 }
 
             }
@@ -89,6 +103,16 @@ $(function () {
             return 'null';
         }
     }
+
+//区分手机浏览器和手机app的场景
+    var is_browser = (function(){
+        var ua = navigator.userAgent,
+            isWX = ua.match(/MicroMessenger\/([\d\.]+)/), /*微信*/
+            isQQ = ua.match(/QQ\/([\d\.]+)/), /*手Q*/
+            isQzone = ua.match("Qzone"); /*手空*/
+
+        return !(isQQ || isQzone || isWX);
+    })();
 
     $(window).resize(function() {
         dom_width = $(document).width();
