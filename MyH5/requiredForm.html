@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <script>
+        function validateForm(thisForm) {
+            with (thisForm){
+//                if (validateRequired(email,"Email must be filled out!") == false){
+                if (!validateRequired(email,"Email must be filled out!")){
+                    email.focus;
+                    console.info("Email must be filled out!");
+                    return false;
+//                }else if (validateEmail(email,"Not a valid e-mail address!") == false){
+                }else if (!validateEmail(email,"Not a valid e-mail address!")){
+                    email.focus;
+                    console.info("Not a valid e-mail address!");
+                    return false;
+                }else {
+                    return true;
+                }
+            }
+        }
+        
+        function validateRequired(field, alertText) {
+            with (field){
+                if (value == null || value == ""){
+                    alert(alertText);
+                    return false;
+                }else {
+                    return true;
+                }
+            }
+        }
+        
+        function validateEmail(field, alertText) {
+            with (field){
+                var apos=value.indexOf("@")
+                var dotpos=value.lastIndexOf(".")
+                if (apos<1||dotpos-apos<2){
+                    alert(alertText);
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+    </script>
+    <script>
+        function checkInput() {
+            var demo = document.getElementById("demo").value;
+            try {
+                if (demo == "") throw "empty";
+                if (isNaN(demo)) throw "not a number";
+                if (demo > 10) throw "too high";
+                if (demo < 5) throw "too low";
+                if (demo >= 5 && demo <= 10) throw "all right";
+            }catch (err){
+                console.info(demo + " : " + err);
+                document.getElementById("mess").innerHTML = demo + " : " + err;
+            }
+        }
+
+    </script>
+</head>
+<body>
+<form action="html/index.html" onsubmit="return validateForm(this)" method="post">
+    Email:<input type="text" id="email" size="30">
+    <input type="submit" value="提交">
+</form>
+<br>
+<input id="demo" type="text">
+<button type="button" onclick="checkInput()">判断输入</button>
+<p id="mess"></p>
+</body>
+</html>
