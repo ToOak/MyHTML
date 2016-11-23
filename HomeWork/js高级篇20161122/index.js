@@ -16,18 +16,19 @@ Rectangle.prototype.render = function () {
     //事件(比如点击)里的function中,this指向已经发生变化,所以需要在事件外面先对this进行缓存,
     //示例如下
     var that = this;
-    this.div.addEventListener('click', function () {
+    var div = this.div;
+    div.addEventListener('click', function () {
        if (that.config.clickMethod == "fold"){
-           if (that.div.style.height == "500px"){
-               that.div.style.height = "20px";
-               that.div.style.width = "80px";
+           if (this.style.height == "500px"){
+               this.style.height = "20px";
+               this.style.width = "80px";
            }else {
-               that.div.style.height = "500px";
-               that.div.style.width = "500px";
+               this.style.height = "500px";
+               this.style.width = "500px";
            }
        }else if (that.config.clickMethod == "hide"){
            // that.div.style.visibility = "hidden";
-           that.div.style.display = "none";
+           this.style.display = "none";
        }
     })
 }
