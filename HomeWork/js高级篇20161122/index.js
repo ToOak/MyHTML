@@ -18,18 +18,23 @@ Rectangle.prototype.render = function () {
     var that = this;
     var div = this.div;
     div.addEventListener('click', function () {
-       if (that.config.clickMethod == "fold"){
-           if (this.style.height == "500px"){
-               this.style.height = "20px";
-               this.style.width = "80px";
-           }else {
-               this.style.height = "500px";
-               this.style.width = "500px";
-           }
-       }else if (that.config.clickMethod == "hide"){
-           // that.div.style.visibility = "hidden";
-           this.style.display = "none";
-       }
+        switch (that.config.clickMethod){
+            case 'fold':{
+                if (this.style.height == "500px"){
+                    this.style.height = "20px";
+                    this.style.width = "80px";
+                }else {
+                    this.style.height = "500px";
+                    this.style.width = "500px";
+                }
+                break;
+            }
+            case 'hide':{
+                // that.div.style.visibility = "hidden";
+                this.style.display = "none";
+                break;
+            }
+        }
     })
 }
 
